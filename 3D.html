@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D效果视图</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            /*margin边界，边缘*/
+            padding: 0;
+            /*padding填充*/
+        }
+        .container{
+            width: 600px;
+            height: 600px;
+            border: 1px cadetblue solid;
+            margin: 50px auto;
+            transform-style/*变形风格，默认2D*/: preserve-3d;
+            perspective/*设置三维透视距离*/: 1200px;
+        }
+        .i{
+            width: 300px;
+            height: 450px;
+            display: block;
+            margin: 50px auto;
+            background: url("img/i.jpg") 0px 0px /*0px 0px表示偏移像素*// 300px 450px no-repeat/*repeat重叠*/;
+            box-shadow/*阴影效果*/: -7px/*水平阴影*/ 10px/*垂直阴影*/ 10px/*阴影的模糊距离*/ #333;
+            transform/*变形，变换*/: rotateX(60deg)/*rotate旋转（沿着X轴旋转）*/ rotateY(3deg) rotateZ(-25deg);
+            transition/*原意是过渡的，产生过渡效果*/: all/*代表所有的元素*/ 1s/*过渡时间*/ ease-out/*慢速过渡*/;
+        }
+        .i:hover/*鼠标移动上去*/{
+            transform: rotate3D(0,0,0,0deg);
+            box-shadow: -100px 100px 10px #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><a  class="i" href=""></a>
+
+    </div>
+</body>
+</html>
